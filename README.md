@@ -17,10 +17,10 @@ Microservices are revolutionizing how applications are developed and deployed. T
 
 Run through each of the exercises sequentially - they should only take 5-10 min each.
 
-* Exercise 1: [Initialize Docker Swarm and Add Nodes to the Cluster]()
-* Exercise 2: [TBD]()
-* Exercise 3: [TBD]()
-* Exercise 4: [TBD]()
-* Exercise 5: [TBD]()
+* Exercise 1: [Initialize Docker Swarm and Add Nodes to the Cluster](ex1/README.md)
+* Exercise 2: [Deploy a Private Registry Service to the Swarm](ex2/README.md)
+* Exercise 3: [Create an API Microservice](ex3/README.md)
+* Exercise 4: [Dockerize your API microservice](ex4/README.md)
+* Exercise 5: [Deploy your API Microservice to Docker Swarm](ex5/README.md)
 * Exercise 6: [TBD]()
 * Exercise 7: [TBD]()
