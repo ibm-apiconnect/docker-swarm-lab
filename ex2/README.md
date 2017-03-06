@@ -33,4 +33,4 @@ nlqmvnomfk1g  registry      replicated  1/1       registry:2
 
 Now that you have a registry, you can start publishing images to it. This in-turn allows Docker Swarm to deploy them as services across all of our VMs. With this infrastructure in place, you'll need to create some microservices and "dockerize" them.
 
-In the next exercise, you will [build an API application using the API Connect open-source LoopBack framework](#TODO).
+In the next exercise, you will [build an API application using the API Connect open-source LoopBack framework](../ex3/README.md).

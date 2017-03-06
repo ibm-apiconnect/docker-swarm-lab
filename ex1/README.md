@@ -49,4 +49,4 @@ The asterisk indicates your current machine. All nodes should be `Ready` Status 
 
 ## Next Steps
 
-In the next exercise, we'll [deploy our first service to the swarm](#TODO).
+In the next exercise, we'll [deploy our first service to the swarm](../ex2/README.md).

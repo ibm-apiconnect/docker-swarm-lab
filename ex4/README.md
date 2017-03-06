@@ -60,5 +60,4 @@ $ docker push localhost:5000/sample-lb
 
 ## Next steps
 
-Now that you have you API microservice available in the registry as a Docker image, swarm is able to deploy it as a service to each node in the swarm. However, before you do that you'll need to create an overlay network for each of the microservices. This will allow you to secure connections to each microservice as well as use an API gateway to load balance and enforce policies - we'll talk about this in more detail. Jump to the next exercise [here](#TODO).
-
+Now that you have you API microservice available in the registry as a Docker image, swarm is able to deploy it as a service to each node in the swarm. However, before you do that you'll need to create an overlay network for each of the microservices. This will allow you to secure connections to each microservice as well as use an API gateway to load balance and enforce policies - we'll talk about this in more detail. [Jump to the next exercise](../ex5/README.md).

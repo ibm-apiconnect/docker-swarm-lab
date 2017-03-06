@@ -56,4 +56,4 @@ After launching the toolkit, you can start your API application on your machine 
 ### TODO: walk user through get/post/get some sample API.
 
 ## Next steps
-Now that you've created an API microservice, you'll need to dockerize it before you deploy it to the swarm. In the next step, you'll create a Docker image from the application you just created.
+Now that you've created an API microservice, you'll need to dockerize it before you deploy it to the swarm. In the next step, you'll [create a Docker image from the application you just created](../ex4/README.md).
