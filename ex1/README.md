@@ -5,7 +5,7 @@ In this exercise, you'll initialize Docker Swarm. Docker Swarm provides clusteri
 ## Initialize Swarm Manager Node
 
 1. Open a terminal in the same VM that you cloned this GitHub repository
-1. Identify the IP address of your VM. In Linux, you can can open the Connection Information Prompt on the top right and find your address under the `IPv4` section.
+1. Identify the IP address of your VM. In Linux, you can can open the Connection Information Prompt on the top right and find your address under the `IPv4` section. You can also use `ifconfig` to find the IP.
 1. Run the following command:
 ```
 docker swarm init --advertise-addr <IP-from-previous-step>
@@ -30,23 +30,27 @@ Copy the `docker swarm join` command for the next step.
 
 ## Add Swarm Worker Nodes
 
-To demonstrate Docker Swarm service model and networking, we'll need to add some worker nodes to the swarm.
+To demonstrate Docker Swarm service model and networking, you'll need to add some worker nodes to the swarm.
 
 Run the command from the previous step in each additional machine you want to join the swarm. Ensure that each machine is able to access IP defined by your `--advertise-addr`.
 
 You should see the following output:
 ```
+$ docker swarm join \
+  --token SWMTKN-1-1e4qkzhijskumj17epwoms5oa8uy7tmejvcvskqarsvcxvlvhh-ayutk7rk8plzesr97wryfjvs9 \
+  192.168.231.140:2377
+
 This node joined a swarm as a worker.
 ```
 
 To ensure that your swarm nodes have been properly added, switch to your manager node and run `docker node ls`:
 ```
 ID                           HOSTNAME                   STATUS  AVAILABILITY  MANAGER STATUS
-4z0i1x83m7nwjy3qol8jy6cc6    worker-node-1  Ready   Active        
-abk00th1nhe3lb4fvjyiqvitf *  manager-node  Ready   Active        Leader
+ovd9qwjf95eo3x5ijdi2ecjzg    localuser-virtual-machine  Ready   Active        
+yyuuufleycap2uvmgovszem18 *  master                     Ready   Active        Leader
 ```
 The asterisk indicates your current machine. All nodes should be `Ready` Status and `Active`.
 
 ## Next Steps
 
-In the next exercise, we'll [deploy our first service to the swarm](../ex2/README.md).
+In the next exercise, you'll [deploy your first service to the swarm](../ex2/README.md).

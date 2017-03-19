@@ -22,5 +22,4 @@ Run through each of the exercises sequentially - they should only take 5-10 min 
 * Exercise 3: [Create an API Microservice](ex3/README.md)
 * Exercise 4: [Dockerize your API microservice](ex4/README.md)
 * Exercise 5: [Deploy your API Microservice to Docker Swarm](ex5/README.md)
-* Exercise 6: [TBD]()
-* Exercise 7: [TBD]()
+* Exercise 6: [Load-balance your API Microservices with NGINX](ex6/README.md)
