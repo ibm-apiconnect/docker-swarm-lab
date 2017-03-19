@@ -5,7 +5,7 @@ In this exercise, you'll initialize Docker Swarm. Docker Swarm provides clusteri
 ## Initialize Swarm Manager Node
 
 1. Open a terminal in the same VM that you cloned this GitHub repository
-1. Identify the IP address of your VM. In Linux, you can can open the Connection Information Prompt on the top right and find your address under the `IPv4` section. You can also use `ifconfig` to find the IP.
+1. Identify the IP address of your VM. In Linux, you can can open the Connection Information Prompt on the top right and find your address under the `IPv4` section. You can also use `ifconfig` to find the IP. It should look something like `192.168.x.x`.
 1. Run the following command:
 ```
 docker swarm init --advertise-addr <IP-from-previous-step>
