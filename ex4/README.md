@@ -8,7 +8,7 @@ Dockerfiles allow you to describe the process of building an image. In this dire
 
 Let's quickly walk through what each step of the Dockerfile does:
 
-### Dockerfile:
+### Dockerfile
 ```
 # A starting point - comes with Debian and a number of development header packages
 FROM node:6
@@ -34,16 +34,21 @@ EXPOSE 3000
 CMD [ "npm", "start" ]
 ```
 
-### .dockerignore:
+### .dockerignore
 ```
 node_modules
 ```
+The `.dockerignore` has this single line entry and tells Docker to avoid copying over local copy of the `node_modules` as we are building them in the Dockerfile.
 
-Copy over the `Dockerfile` and `.dockerignore` files into the application directory. The `.dockerignore` file has one entry - `node_modules`. This tells Docker to rebuild the node_modules every time instead of copying them over.
+Jump back to your terminal. If `apic edit` is still running, run `CTRL+C` to close the toolkit as we no longer need it. Copy over the `Dockerfile` and `.dockerignore` files into the LoopBack application directory.
+
+```
+cp ~/workspace/docker-swarm-lab/ex4/* .
+```
 
 ## Build the Docker image
 
-To build a docker image by executing the instructions in the `Dockerfile`, you'll run `docker build --tag localhost:5000/sample-lb `. The tag tells Docker that it will be part of your private regsitry.
+To build a docker image by executing the instructions in the `Dockerfile`, you'll run `docker build --tag localhost:5000/sample-lb .`. Note the ` .` at the end which tells Docker to build from the current directory. The `--tag` tells Docker that it will be part of your private regsitry.
 
 To check that your image is built and tagged, run the following command and verify the output:
 
@@ -66,4 +71,4 @@ $ docker push localhost:5000/sample-lb
 
 ## Next steps
 
-Now that you have you API microservice available in the registry as a Docker image, swarm is able to deploy it as a service to each node in the swarm. However, before you do that you'll need to create an overlay network for each of the microservices. This will allow you to secure connections to each microservice as well as use an API gateway to load balance and enforce policies - this will be covered in more detail in a later exercise. [Jump to the next exercise](../ex5/README.md).
+Now that you have you API microservice available in the registry as a Docker image, swarm is able to deploy it as a service to each node in the swarm. However, before you do that you'll need to create an overlay network for each of the microservices. This will allow you to use a gateway to secure access to your application as well as provide load balancing - this will be covered in more detail in a later exercise. [Jump to the next exercise](../ex5/README.md).

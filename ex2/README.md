@@ -1,6 +1,6 @@
 # Deploy a Private Registry Service to the Swarm
 
-In this exercise, you will deploy a private Docker registry to swarm. This will allow us to build custom applications as Docker images and push them to a registry where they can be pulled by every image within the swarm.
+In this exercise, you will deploy a private Docker registry to swarm. This will allow us to build custom applications as Docker images and push them to a registry where they can be pulled by every VM within the swarm.
 
 ## Docker Registry image
 
@@ -8,7 +8,7 @@ Docker Hub is essentially a package manager but for Docker images. It's powered 
 
 ## Create a Service on Swarm
 
-On the manager node, run the following command to create a registry service:
+On the manager node, run the following command to create your own locally running Docker registry service:
 
 ```
 docker service create -p 5000:5000 --name registry registry:2

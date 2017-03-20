@@ -13,6 +13,15 @@ Microservices are revolutionizing how applications are developed and deployed. T
    * UDP port 4789 for overlay network traffic
 1. Clone this GitHub repository to one of the machines - this will be your "manager" machine.
 
+## Prepare your workspace
+
+To stay organized, let's create a workspace and clone this repository:
+```
+mkdir ~/workspace
+cd ~/workspace
+git clone http://github.com/ibm-apiconnect/docker-swarm-lab.git
+```
+
 ## Exercises
 
 Run through each of the exercises sequentially - they should only take 5-10 min each.

@@ -12,14 +12,9 @@ That's it! You've created a MongoDB that you can now use to perform CRUD operati
 
 ## Scaffold a sample LoopBack Application
 
-To stay organized, let's start with creating a workspace directory:
+Ensure you're in your workspace directory and create an empty folder for your application code.
 ```
-mkdir ~/workspace
 cd ~/workspace
-```
-
-Create an empty folder for your application code.
-```
 mkdir sample-lb
 cd sample-lb
 ```
@@ -54,9 +49,9 @@ You'll see that it scaffolds your application by creating a Node.js project with
 
 API Connect comes with a toolkit that allows you to visually create, test and deploy APIs. To launch it, simply run `apic edit` from the directory of your application.
 
-The first time you open it, it may ask you to log-in. If you have a Bluemix account, you can use it to log-in. Otherwise, you can set the `SKIP_LOGIN=true` option to launch apic edit:
+The first time you open it, it may ask you to log-in. If you have a Bluemix account, you can use it to log-in. Otherwise, make an account on [Bluemix](https://console.ng.bluemix.net/registration).
 ```
-SKIP_LOGIN=true apic edit
+apic edit
 ```
 
 ## Configure your DB connection
@@ -65,13 +60,15 @@ Click the Data Sources tab along the top and click the `Add` button. Name your D
 
 ## Configure a Model
 
-Next, we'll need to define the type of object we want to store in the Database. Jump to the Models tab and `Add` a new model. You can get creative here with what type of object you want to store, but here is an example model I've created to represent a simple car:
+Next, we'll need to define the type of object we want to store in the Database. Hit the `All Datasources` button to go back. Then jump to the Models tab and `Add` a new model. You can get creative here with what type of object you want to store, but here is an example model I've created to represent a simple car:
 
 <img src="SS1.png"  width="800">
 
+Note: Under the `Data Source` option, ensure that you've chosen the DB connection you created in the previous step, `mongo`. 
+
 ## Explore your APIs
 
-After launching the toolkit, you can start your API application on your machine and start testing the APIs. To do so, press the play button on the bottom of your window - this starts the LoopBack application along with an API gateway. Wait for it to start - it should take less than 10 seconds. Next, hit the Explore button on the top right which launches a Swagger-based view (Open API Spec) of the APIs that are available.
+After launching the toolkit, you can start your API application on your machine and start testing the APIs. To do so, press the play button on the bottom of your window - this starts the LoopBack application along with an API gateway. Wait for it to start - it will say `Running`. This should take less than 30 seconds. Next, hit the Explore button on the top right which launches a Swagger-based view (Open API Spec) of the APIs that are available.
 
 Along the left side, you should see a number of operations with the model that you created in the previous step. Let's try calling a series of these operations.
 
@@ -91,9 +88,11 @@ You should see a `200 OK` response but an empty array - this is because we haven
 
 Let's test adding an object to the database.
 
-Navigate to the operation `POST /<Model>` to create a database entry. Scroll down to the "Call Operation" button, enter some data into the Parameters section (or use the `Generate` button), and hit `Call Operation`.
+Navigate to the operation `POST /<Model>` to create a database entry. Scroll down to the "Call Operation" button. Right above that button, there is a field to enter parameters. Hit `Generate` then customize the automatically generated data. Then hit the `Call Operation` button to POST your object to the Mongo database.
 
-You should see a `200 OK` response, as well as a response body indicating that the database update has succeeded. You can call `GET /<Model>` again to retrieve the stored objects.
+You should see a `200 OK` response, as well as a response body indicating that the database update has succeeded. 
+
+To test that the objects really are in the database, you can call `GET /<Model>` again to retrieve the stored objects.
 
 ## Next steps
 Now that you've created an API microservice, you'll need to dockerize it before you deploy it to the swarm. In the next step, you'll [create a Docker image from the application you just created](../ex4/README.md).

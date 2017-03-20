@@ -2,7 +2,20 @@
 
 In the previous exercise, you deployed your Node.js LoopBack application to the Swarm and scaled it up to 3 replicas. Now you'll deploy an NGINX load balancer to allow access to those APIs.
 
-## Create an NGINX configuration file
+For the next part, there are two options for creating your NGINX container. You can simply copy over the files from this Git repository or you can create the files yourself.
+
+## Copy over NGINX configuration files (OPTION 1)
+```
+cd ~/workspace
+mkdir nginx
+cd nginx
+cp ~/workspace/docker-swarm-lab/ex6/* .
+```
+
+Continue below at [Build your NGINX Docker Container](#build-your-nginx-docker-container)
+
+## Manually create NGINX configuration files (OPTION 2)
+### Create an NGINX configuration file
 
 Run the following commands to create a new file that will become your NGINX conf file:
 ```
@@ -26,7 +39,7 @@ upstream backend {
 }
 ```
 
-## Build an NGINX Docker container
+### Create a Dockerfile for your NGINX Docker container
 Next, we'll need to build our NGINX docker container. Create a `Dockerfile`:
 
 ```
@@ -39,10 +52,12 @@ FROM nginx
 COPY default.conf /etc/nginx/conf.d/default.conf
 ```
 
+## Build your NGINX Docker container
 Run the following to build and run your NGINX Docker container:
 ```
-docker build -t custom-nginx .
-docker run --name my-nginx -p 8080:80 -d custom-nginx
+docker build -t localhost:5000/custom-nginx .
+docker push localhost:5000/custom-nginx
+docker service create --name my-nginx -p 8080:80 --network mynet localhost:5000/custom-nginx
 ```
 
 ## Access your APIs!
