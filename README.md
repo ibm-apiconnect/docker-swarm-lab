@@ -11,7 +11,6 @@ Microservices are revolutionizing how applications are developed and deployed. T
    * TCP port 2377 for cluster management communications
    * TCP and UDP port 7946 for communication among nodes
    * UDP port 4789 for overlay network traffic
-1. Clone this GitHub repository to one of the machines - this will be your "manager" machine.
 
 ## Prepare your workspace
 
